@@ -5,6 +5,10 @@
 #ifndef SAPISALES_USER_H
 #define SAPISALES_USER_H
 
+#include "errors.h"
+#include "messages.h"
+#include "useful.h"
+
 enum UserType{
 
     TEACHER,

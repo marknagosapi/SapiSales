@@ -9,6 +9,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include "useful.h"
+#include "errors.h"
+#include "messages.h"
 
 enum ProductType{
     GROCERY,

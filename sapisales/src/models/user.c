@@ -4,8 +4,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "user.h"
 #include <string.h>
+#include "user.h"
+
 
 int numberOfUsers = 0;
 

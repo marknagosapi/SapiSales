@@ -59,16 +59,32 @@ char* getSpecialization(enum Specialization type){
     }
 }
 
-User* createUser(char* name, enum UserType type, enum Gender gender, enum Specialization specialization, unsigned  int birthYear){
-    User* newUser = malloc(sizeof(User));
-    newUser ->id = ++numberOfUsers;
+
+
+void createUser(User** user){
+    *user = (User*)malloc(sizeof(User));
+}
+
+void createDate(Date** date){
+    *date = (Date*)malloc(sizeof(Date));
+}
+
+void setDate(Date* date, unsigned int year,unsigned int month,unsigned int day){
+    date->day = day;
+    date->month = month;
+    date->year = year;
+}
+
+void setUserData(User* newUser,char* name, enum UserType type, enum Gender gender, enum Specialization specialization, Date* date){
+    newUser -> id = ++numberOfUsers;
     newUser -> specialization = specialization;
-    newUser -> birthYear =birthYear;
+    newUser -> date.year = date->year;
+    newUser -> date.month = date->month;
+    newUser -> date.day = date->day;
     newUser -> gender = gender;
     newUser -> type = type;
     strcpy(newUser->name, name);
-    return newUser;
-}
+};
 
 void printUser(User *user){
     printf("%s details:\n"
@@ -76,11 +92,13 @@ void printUser(User *user){
            "\t - TYPE: %s\n"
            "\t - GENDER: %s\n"
            "\t - SPECIALIZATION: %s\n"
-           "\t - BIRTH YEAR: %i\n",
+           "\t - BIRTH YEAR: %i/%i/%i\n",
            user->name,
            user->id,
            getUserType(user->type),
            getGender(user->gender),
            getSpecialization(user->specialization),
-           user->birthYear);
+           user->date.year,
+           user->date.month,
+           user->date.day);
 }

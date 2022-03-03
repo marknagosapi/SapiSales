@@ -18,3 +18,10 @@ void printDescriptionMessage(enum LabType exercise){
             printf("Undefined description\n");
     }
 }
+
+void startMessage(){
+    printf("KOD FUTTASA ELKEZDODOTT!\n");
+}
+void endMessage(){
+    printf("KOD FUTTASA BEFEJEZODOTT!\n");
+}

@@ -23,15 +23,11 @@ char* getProductType(enum ProductType type){
     }
 }
 
-Product *createProduct(char* id, char* name, enum ProductType type, unsigned  int amount){
-    Product * newProduct = malloc(sizeof(Product));
-    strcpy(newProduct->id,id);
-    strcpy(newProduct->name,name);
-    newProduct->type = type;
-    newProduct->amount = amount;
-    newProduct->creationDate = time(NULL);
-    return newProduct;
+void createProduct(Product** product){
+    *product = (Product*)malloc(sizeof(Product));
 }
+
+
 
 void printProduct(Product * product){
     printf("%s details:\n"
@@ -45,4 +41,11 @@ void printProduct(Product * product){
            product->amount,
            product->creationDate
     );
+}
+
+void setProduct(Product *product, char *id, char *name, enum ProductType type, unsigned int amount) {
+        strcpy(product->id,id);
+        strcpy(product->name,name);
+        product->type = type;
+        product->amount = amount;
 }

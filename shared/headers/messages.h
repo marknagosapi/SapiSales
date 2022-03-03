@@ -12,5 +12,7 @@ enum LabType{
 };
 
 void printDescriptionMessage(enum LabType);
+void startMessage();
+void endMessage();
 
 #endif //SAPISALES_MESSAGES_H

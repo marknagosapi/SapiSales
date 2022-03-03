@@ -8,3 +8,7 @@ void lab2(){
     testUserFunctionalities();
     testProductFunctionalities();
 }
+
+void lab3(){
+    testUserFunctionalities2();
+}

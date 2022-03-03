@@ -30,33 +30,39 @@ enum Specialization{
     ENGINEERING
 };
 
+typedef struct userDate{
+    unsigned int year;
+    unsigned int month;
+    unsigned int day;
+}Date;
+
+
 typedef struct User{
     unsigned  int id;
     char name[51];
     enum UserType type;
     enum Gender gender;
-    unsigned int birthYear;
+    Date date;
     enum Specialization specialization;
 
 }User;
+
+void createDate(Date** date);
+
+void setDate(Date* date, unsigned int year,unsigned int month,unsigned int day);
+
 
 char* getUserType(enum UserType type);
 char* getGender(enum Gender type);
 char* getSpecialization(enum Specialization type);
 
-User* createUser(
-        char* name,
-        enum UserType type,
-        enum Gender gender,
-        enum Specialization specialization,
-        unsigned int birthYear
-        );
+void createUser(User** user);
 
 void setUserData(User* user,char* name,
         enum UserType type,
         enum Gender gender,
         enum Specialization stearate,
-        int birthYear);
+        Date* date);
 
 void printUser(User* user);
 

@@ -6,7 +6,10 @@
 #define SAPISALES_LAB_MANAGER_H
 
 #include "lab2.h"
+#include "lab3.h"
 
 void lab2();
+void lab3();
+void lab4();
 
 #endif //SAPISALES_LAB_MANAGER_H

@@ -49,6 +49,9 @@ typedef struct User{
 
 void createDate(Date** date);
 
+bool isValidDate(Date date);
+bool isLeapYear(int year);
+
 void setDate(Date* date, unsigned int year,unsigned int month,unsigned int day);
 
 

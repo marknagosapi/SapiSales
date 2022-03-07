@@ -6,4 +6,6 @@
 #define SAPISALES_LAB3_H
 
 void testUserFunctionalities2();
+void randomGeneratedUsers();
+void testDate(int);
 #endif //SAPISALES_LAB3_H

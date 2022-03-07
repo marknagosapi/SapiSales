@@ -59,7 +59,39 @@ char* getSpecialization(enum Specialization type){
     }
 }
 
+bool isValidDate(Date date){
+    int yy = date.year;
+    int mm = date.month;
+    int dd = date.day;
 
+    //checks year
+    if(yy>=1900 && yy<=9999)
+    {
+        //check month
+        if(mm>=1 && mm<=12)
+        {
+            //check days
+            if((dd>=1 && dd<=31) && (mm==1 || mm==3 || mm==5 || mm==7 || mm==8 || mm==10 || mm==12))
+                return true;
+            else if((dd>=1 && dd<=30) && (mm==4 || mm==6 || mm==9 || mm==11))
+                return true;
+            else if((dd>=1 && dd<=28) && (mm==2))
+                return true;
+            else if(dd==29 && mm==2 && isLeapYear(yy))
+                return true;
+            else
+               return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+       return false;
+    }
+}
 
 void createUser(User** user){
     *user = (User*)malloc(sizeof(User));
@@ -101,4 +133,25 @@ void printUser(User *user){
            user->date.year,
            user->date.month,
            user->date.day);
+}
+
+bool isLeapYear(int year) {
+    // leap year if perfectly divisible by 400
+    if (year % 400 == 0) {
+       return true;
+    }
+        // not a leap year if divisible by 100
+        // but not divisible by 400
+    else if (year % 100 == 0) {
+        return false;
+    }
+        // leap year if not divisible by 100
+        // but divisible by 4
+    else if (year % 4 == 0) {
+        return true;
+    }
+        // all other years are not leap years
+    else {
+        return false;
+    }
 }

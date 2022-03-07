@@ -17,9 +17,8 @@ void deleteUserArray(UserArray **userArray) {
 }
 
 bool addNewUser(UserArray *userArray, User *newUser) {
-    if(userArray->capacity < 10) {
+    createUser(&newUser);
 
-    }
     return 0;
 }
 

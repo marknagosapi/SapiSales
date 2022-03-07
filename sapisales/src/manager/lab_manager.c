@@ -13,6 +13,11 @@ void lab2(){
 
 void lab3(){
     startMessage();
-    testUserFunctionalities2();
+    //testUserFunctionalities2();
+    //randomGeneratedUsers();
+    // n - The number of generated dates, it's like a constant!
+    //int n = 100;
+    //testDate(n);
+    randomGeneratedUsers();
     endMessage();
 }

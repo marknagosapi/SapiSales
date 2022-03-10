@@ -38,7 +38,7 @@ typedef struct userDate{
 
 
 typedef struct User{
-    unsigned  int id;
+    unsigned int id;
     char name[51];
     enum UserType type;
     enum Gender gender;
@@ -48,6 +48,8 @@ typedef struct User{
 }User;
 
 void createDate(Date** date);
+
+void deleteUser(User**);
 
 bool isValidDate(Date date);
 bool isLeapYear(int year);

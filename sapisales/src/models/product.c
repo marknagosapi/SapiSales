@@ -3,6 +3,11 @@
 //
 
 #include "product.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+static int numOfProducts = 0;
 
 char* getProductType(enum ProductType type){
     switch(type){
@@ -43,9 +48,17 @@ void printProduct(Product * product){
     );
 }
 
-void setProduct(Product *product, char *id, char *name, enum ProductType type, unsigned int amount) {
-        strcpy(product->id,id);
+void setProduct(Product *product, char *name, enum ProductType type, unsigned int amount) {
+        char p[20];
+        strcpy(p,"product");
+        char a[10];
+        itoa(numOfProducts,a,10);
+        strcpy(product->id,p);
         strcpy(product->name,name);
         product->type = type;
         product->amount = amount;
+}
+
+void deleteProduct(Product ** product) {
+    free(product);
 }

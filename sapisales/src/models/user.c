@@ -107,6 +107,10 @@ void setDate(Date* date, unsigned int year,unsigned int month,unsigned int day){
     date->year = year;
 }
 
+void deleteUser(User** user){
+    free(user);
+}
+
 void setUserData(User* newUser,char* name, enum UserType type, enum Gender gender, enum Specialization specialization, Date* date){
     newUser -> id = ++numberOfUsers;
     newUser -> specialization = specialization;

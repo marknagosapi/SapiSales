@@ -18,6 +18,6 @@ void createUserArray(UserArray** userArray, int capacity);
 void deleteUserArray(UserArray** userArray);
 bool addNewUser(UserArray* userArray, User* newUser);
 User* getUserAtPosition(UserArray* userArray, int position);
-
-
+void printUsers(UserArray* userArray);
+bool readUsers(UserArray*, char*);
 #endif //SAPISALES_USER_ARRAY_H

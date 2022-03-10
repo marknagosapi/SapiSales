@@ -11,6 +11,20 @@ enum LabType{
     LAB4,
 };
 
+enum errorType{
+    FILE_OPENING,
+    MEMORY_ALLOCATION,
+
+};
+
+enum MFT{
+    PRODUCT,
+    USER
+};
+
+void freeMemory(enum MFT);
+
+void printErrorMessages(enum errorType);
 void printDescriptionMessage(enum LabType);
 void startMessage();
 void endMessage();

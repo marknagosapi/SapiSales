@@ -21,3 +21,7 @@ void lab3(){
     randomGeneratedUsers();
     endMessage();
 }
+
+void lab4(){
+    testUserArray();
+}

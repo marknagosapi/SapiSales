@@ -8,7 +8,7 @@
 #include "user.h"
 
 
-int numberOfUsers = 0;
+int numberOfUsers = 1000;
 
 char* getUserType(enum UserType type){
     switch(type){
@@ -95,6 +95,7 @@ bool isValidDate(Date date){
 
 void createUser(User** user){
     *user = (User*)malloc(sizeof(User));
+
 }
 
 void createDate(Date** date){
@@ -112,7 +113,8 @@ void deleteUser(User** user){
 }
 
 void setUserData(User* newUser,char* name, enum UserType type, enum Gender gender, enum Specialization specialization, Date* date){
-    newUser -> id = ++numberOfUsers;
+    newUser -> id = numberOfUsers;
+    numberOfUsers+=10;
     newUser -> specialization = specialization;
     newUser -> date.year = date->year;
     newUser -> date.month = date->month;

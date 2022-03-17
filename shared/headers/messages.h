@@ -9,22 +9,14 @@ enum LabType{
     LAB2,
     LAB3,
     LAB4,
+    LAB5
 };
-
-enum errorType{
-    FILE_OPENING,
-    MEMORY_ALLOCATION,
-
-};
-
 enum MFT{
     PRODUCT,
     USER
 };
 
 void freeMemory(enum MFT);
-
-void printErrorMessages(enum errorType);
 void printDescriptionMessage(enum LabType);
 void startMessage();
 void endMessage();

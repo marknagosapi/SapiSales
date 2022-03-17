@@ -52,7 +52,7 @@ void setProduct(Product *product, char *name, enum ProductType type, unsigned in
         char p[20];
         strcpy(p,"product");
         char a[10];
-        itoa(numOfProducts,a,10);
+        //itoa(numOfProducts,a,10);
         strcpy(product->id,p);
         strcpy(product->name,name);
         product->type = type;

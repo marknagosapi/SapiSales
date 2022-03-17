@@ -2,8 +2,6 @@
 // Created by Mark Nago on 03.03.2022.
 //
 
-
-#include <opencl-c-base.h>
 #include <math.h>
 #include <ranlib.h>
 #include <time.h>
@@ -31,7 +29,7 @@ char* randomString(int size){
     char ABC[51] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUWXYZ";
     char* string;
     string = (char*)malloc(size*sizeof(char));
-    memset(string,0,sizeof(string));
+   // memset(string,0,sizeof(string));
    // strcpy(string,"");
     if(!string){
         printf("There was a problem generating the USER'S name!\n");

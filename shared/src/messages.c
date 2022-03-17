@@ -7,14 +7,14 @@
 #include <stdlib.h>
 #include "../headers/messages.h"
 
-void red () {
+void red2 () {
     printf("\033[1;31m");
 }
 
-void reset () {
+void reset2 () {
     printf("\033[0m");
 }
-void green(){
+void green2(){
     printf("\033[0;32m");
 }
 
@@ -25,6 +25,10 @@ void printDescriptionMessage(enum LabType exercise){
             printf("DESCRIPTION");
             printf("\n\n***********************************************************\n\n");
             break;
+        case LAB5:
+            printf("\n\n***********************************************************\n\n");
+            printf("TESTING PRODUCTSTACK FUNCTIONALITIES");
+            printf("\n\n***********************************************************\n\n");
         default:
             printf("Undefined description\n");
     }
@@ -38,24 +42,11 @@ void endMessage(){
 }
 
 void freeMemory(enum MFT type) {
-    green();
+    green2();
     if(type==USER){
         printf("[USER SUCCESSFULLY DELETED]\n");
     } else {
         printf("[PRODUCT SUCCESSFULLY DELETED\n");
     }
-    reset();
-}
-
-void printErrorMessages(enum errorType type) {
-    red();
-    printf("[ERROR]");
-    reset();
-    if(type==FILE_OPENING){
-        printf(" There was a problem opening the file!\n");
-    }
-
-    if(type==MEMORY_ALLOCATION){
-        printf("There was a problem allocating the memory!\n");
-    }
+    reset2();
 }

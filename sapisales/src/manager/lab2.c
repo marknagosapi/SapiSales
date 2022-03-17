@@ -35,9 +35,9 @@
         Product  *product3;
         createProduct(&product3);
 
-        setProduct(product2,"MS2", "Book", SCHOOL, 20);
-        setProduct(product3,"MS3", "Tomato", GROCERY, 20);
-        setProduct(product1,"MS1","Car",OBJECT,30);
+        setProduct(product2,"Book", SCHOOL, 20);
+        setProduct(product3, "Tomato", GROCERY, 20);
+        setProduct(product1,"Car",OBJECT,30);
 
 
         printProduct(product1);

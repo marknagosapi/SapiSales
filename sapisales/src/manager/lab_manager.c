@@ -25,3 +25,7 @@ void lab3(){
 void lab4(){
     testUserArray();
 }
+
+void lab5(){
+
+}

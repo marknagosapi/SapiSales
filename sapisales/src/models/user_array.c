@@ -70,7 +70,7 @@ bool readUsers(UserArray* userArray, char * fileName) {
     strcat(path,fileName);
     f = fopen(path,'r');
     if(!f){
-        printErrorMessages(FILE_OPENING);
+        printErrorMessage(FILE_NOT_FOUND);
     }
     int numOfUsers;
     fscanf(f,"%d",&numOfUsers);

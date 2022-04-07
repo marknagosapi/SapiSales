@@ -10,15 +10,15 @@
 typedef struct {
     unsigned int capacity;
     int top;
-    Product** products;
+    Product ** products;
 }ProductStack;
 
-void createProductStack();
-void push();
-void pop();
-Product top();
-bool isEmpty();
-bool isFull();
-void freeStack();
+void createProductStack(ProductStack**, unsigned int);
+void push(ProductStack*, Product*);
+void pop(ProductStack*);
+Product* top(ProductStack*);
+bool isEmpty(ProductStack*);
+bool isFull(ProductStack*);
+void freeStack(ProductStack*);
 
 #endif //SAPISALES_PRODUCT_STACK_H

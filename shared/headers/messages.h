@@ -9,16 +9,27 @@ enum LabType{
     LAB2,
     LAB3,
     LAB4,
-    LAB5
+    LAB5,
+    LAB8,
+    LAB9
 };
 enum MFT{
     PRODUCT,
-    USER
+    USER,
+    USER_QUEUE,
+    LIST
+};
+
+enum K{
+    OPERATION,
+    MEMORY_ALLOCATING,
+    FILE_OPENING,
 };
 
 void freeMemory(enum MFT);
 void printDescriptionMessage(enum LabType);
 void startMessage();
 void endMessage();
+void successfulK(enum K);
 
 #endif //SAPISALES_MESSAGES_H

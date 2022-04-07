@@ -95,6 +95,7 @@ bool isValidDate(Date date){
 
 void createUser(User** user){
     *user = (User*)malloc(sizeof(User));
+    (*user)->id = numberOfUsers;
 
 }
 
@@ -109,7 +110,7 @@ void setDate(Date* date, unsigned int year,unsigned int month,unsigned int day){
 }
 
 void deleteUser(User** user){
-    free(user);
+    free(*user);
 }
 
 void setUserData(User* newUser,char* name, enum UserType type, enum Gender gender, enum Specialization specialization, Date* date){
@@ -124,7 +125,11 @@ void setUserData(User* newUser,char* name, enum UserType type, enum Gender gende
     strcpy(newUser->name, name);
 };
 
-void printUser(User *user){
+void printUser(User *user,char* destionation){
+
+
+
+    //freopen("CON","w",stdout);
     printf("%s details:\n"
            "\t - ID: %i\n"
            "\t - TYPE: %s\n"
@@ -139,6 +144,8 @@ void printUser(User *user){
            user->date.year,
            user->date.month,
            user->date.day);
+    printf("\n");
+
 }
 
 bool isLeapYear(int year) {

@@ -29,6 +29,7 @@ bool addNewProduct(ProductArray * productArray, Product* product, int position){
         productArray->products[position]->amount = product->amount;
         productArray->products[position]->creationDate = product->creationDate;
         strcpy(productArray->products[position]->id,product->id);
+        productArray->numberOfProducts++;
     }
     return false;
 }

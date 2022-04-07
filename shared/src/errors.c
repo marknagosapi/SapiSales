@@ -24,7 +24,23 @@ void printErrorMessage(enum ErrorType type) {
     }
 
     if(type==MEMORY_ALLOCATION){
-        printf("There was a problem allocating the memory!\n");
+        printf(" There was a problem allocating the memory!\n");
+    }
+
+    if(type==MISSING){
+        printf(" There is nothing to show!\n");
+    }
+
+    if(type==UNSUCCESSFUL_OPERATION){
+        printf(" Unsuccessful operation\n");
+    }
+
+    if(type == NOT_ENOUGH_SPACE){
+        printf(" The Data Structure is FULL!\n");
+    }
+
+    if(type==IS_EMPTY){
+        printf(" The Data Structure is Empty!\n");
     }
 }
 

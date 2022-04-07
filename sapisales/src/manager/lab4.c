@@ -10,8 +10,18 @@ void testUserArrayFunctionalities(){
 
     UserArray *userArray;
     createUserArray(&userArray,MAX_USERS);
+    if(readUsers(userArray,"userInfo.txt")){
 
-    printUsers(userArray);
+        successfulK(OPERATION);
+    } else {
+
+        printErrorMessage(UNSUCCESSFUL_OPERATION);
+    }
+
+    for(int i=0;i<userArray->numberOfUsers;i++) {
+        printUser(userArray->Users[i], "CON");
+    }
+    //printUsers(userArray);
     deleteUserArray(&userArray);
 
 }
@@ -43,7 +53,7 @@ void testUserArray() {
     addNewUser(userArray,user2);
 
     for(int i=0;i<(userArray)->numberOfUsers;i++){
-        printUser((userArray)->Users[i]);
+        printUser((userArray)->Users[i],"CON");
     }
 }
 

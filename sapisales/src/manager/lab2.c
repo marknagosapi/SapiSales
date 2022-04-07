@@ -19,11 +19,11 @@
         User* user;
         createUser(&user);
         setUserData(user,"Micheal Smith", TEACHER, MALE, MATHEMATICS_INFORMATICS, date1);
-        printUser(user);
+        printUser(user,"CON");
         User* user2;
         createUser(&user2);
         setUserData(user2,"ANNE SMITH", TEACHER, FEMALE, MATHEMATICS_INFORMATICS, date2);
-        printUser(user2);
+        printUser(user2,"CON");
     }
 
     void testProductFunctionalities(){

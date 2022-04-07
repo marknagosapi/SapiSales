@@ -59,51 +59,71 @@ User *getUserAtPosition(UserArray *userArray, int position) {
 
 void printUsers(UserArray *userArray) {
     for(int i=0;i<userArray->numberOfUsers;i++){
-        printUser(userArray->Users[i]);
+        printUser(userArray->Users[i],"CON");
         printf("\n");
     }
 }
 
 bool readUsers(UserArray* userArray, char * fileName) {
-    FILE* f;
-    char path[20] = "files/";
-    strcat(path,fileName);
-    f = fopen(path,'r');
-    if(!f){
-        printErrorMessage(FILE_NOT_FOUND);
-    }
-    int numOfUsers;
-    fscanf(f,"%d",&numOfUsers);
+    int ok = 0;
+    if (userArray->capacity > userArray->numberOfUsers) {
+        ok = 1;
+        FILE *f;
+        char path[20] = "files/";
+        strcat(path, fileName);
+        f = fopen(path, "r");
 
-    int temp = numOfUsers;
-    char name[20];
-    int enum1,enum2,enum3;
-    int nrOfProducts;
-    int yy,mm,dd;
-    char productName[20];
-    int enum4;
-    int amount;
-    while(temp>0){
-        fscanf(f,"%s",name);
-        fscanf(f,"%d",&enum1);
-        fscanf(f,"%d",&enum2);
-        fscanf(f,"%d",&enum3);
-        fscanf(f,"%d",&yy);
-        fscanf(f,"%d",&mm);
-        fscanf(f,"%d",&dd);
-        fscanf(f,"%d",&nrOfProducts);
-        Date* date;
-        createDate(&date);
-        setDate(date,yy,mm,dd);
-        setUserData(userArray->Users[userArray->numberOfUsers],name,enum1,enum2,enum3,date);
-        while(nrOfProducts>0){
-            fscanf(f,"%s",productName);
-            fscanf(f,'%d',&enum4);
-            fscanf(f,'%d',&amount);
-            ProductArray * productArray;
-            createProductArray(&productArray,MAX_PROCUTS);
-            setProduct(productArray->products[productArray->numberOfProducts],productName,enum4,amount);
+        if (!f) {
+            printErrorMessage(FILE_NOT_FOUND);
+        } else {
+            //successfulK(FILE_OPENING);
         }
-        temp--;
+
+        int numOfUsers;
+        fscanf(f, "%d", &numOfUsers);
+        printf("%d",numOfUsers);
+        int temp = numOfUsers;
+        char name[20];
+        int enum1, enum2, enum3;
+        int nrOfProducts;
+        int yy, mm, dd;
+        char productName[20];
+        int enum4;
+        int amount;
+        while (temp > 0) {
+
+            fscanf(f, "%s", name);
+            fscanf(f, "%d", &enum1);
+            fscanf(f, "%d", &enum2);
+            fscanf(f, "%d", &enum3);
+            fscanf(f, "%d", &yy);
+            fscanf(f, "%d", &mm);
+            fscanf(f, "%d", &dd);
+            fscanf(f, "%d", &nrOfProducts);
+            printf("%d",mm);
+            Date *date;
+            createDate(&date);
+            setDate(date, yy, mm, dd);
+            createUser(&userArray->Users[userArray->numberOfUsers]);
+            setUserData(userArray->Users[userArray->numberOfUsers], name, enum1, enum2, enum3, date);
+
+            while (nrOfProducts > 0) {
+                fscanf(f, "%s", productName);
+                fscanf(f, "%d", &enum4);
+                fscanf(f, "%d", &amount);
+                ProductArray *productArray;
+                createProductArray(&productArray, MAX_PROCUTS);
+                Product* product;
+                createProduct(&product);
+                setProduct(product, productName, enum4, amount);
+                addNewProduct(productArray,product,productArray->numberOfProducts);
+                nrOfProducts--;
+
+            }
+
+            temp--;
+        }
+
     }
+    return ok;
 }

@@ -69,6 +69,6 @@ void setUserData(User* user,char* name,
         enum Specialization stearate,
         Date* date);
 
-void printUser(User* user);
+void printUser(User* user,char*);
 
 #endif //SAPISALES_USER_H

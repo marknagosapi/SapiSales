@@ -57,8 +57,11 @@ void setProduct(Product *product, char *name, enum ProductType type, unsigned in
         strcpy(product->name,name);
         product->type = type;
         product->amount = amount;
+        product->creationDate = (time_t) asctime(gmtime(&product->creationDate));
+
 }
 
 void deleteProduct(Product ** product) {
     free(product);
+    freeMemory(PRODUCT);
 }

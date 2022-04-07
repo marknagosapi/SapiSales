@@ -43,11 +43,11 @@ void testUserFunctionalities2(){
     User* user;
     createUser(&user);
     setUserData(user,"Micheal Smith", TEACHER, MALE, MATHEMATICS_INFORMATICS, date1);
-    printUser(user);
+    printUser(user,"CON");
     User* user2;
     createUser(&user2);
     setUserData(user2,"ANNE SMITH", TEACHER, FEMALE, MATHEMATICS_INFORMATICS, date2);
-    printUser(user2);
+    printUser(user2,"CON");
 
 }
 
@@ -97,6 +97,6 @@ void randomGeneratedUsers() {
         counter++;
     }
     for(int i=0;i<counter;i++){
-        printUser(&user[i]);
+        printUser(&user[i],"CON");
     }
 }

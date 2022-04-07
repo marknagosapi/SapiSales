@@ -124,7 +124,9 @@ void setUserData(User* newUser,char* name, enum UserType type, enum Gender gende
     strcpy(newUser->name, name);
 };
 
-void printUser(User *user){
+void printUser(User *user,char* destionation){
+    printf("");
+    freopen("CON","w",stdout);
     printf("%s details:\n"
            "\t - ID: %i\n"
            "\t - TYPE: %s\n"
@@ -139,6 +141,7 @@ void printUser(User *user){
            user->date.year,
            user->date.month,
            user->date.day);
+    freopen("CON","w",stdout);
 }
 
 bool isLeapYear(int year) {

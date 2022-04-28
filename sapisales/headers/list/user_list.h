@@ -21,5 +21,7 @@ void insertLast(UserNode** userNode, User* userValue);
 int removeFirst(UserNode** userNode);
 int removeLast(UserNode* userNode);
 void deleteUserList(UserNode** userNode);
+void insertInNthPlace(UserNode* userNode, User* userValue, int pos);
+
 
 #endif //SAPISALES_USER_LIST_H

@@ -93,6 +93,25 @@ int removeLast(UserNode* userNode){
     return NULL;
 }
 
+void insertInNthPlace(UserNode* userNode, User* userValue, int pos){
+    UserNode * p;
+    createUserNode(&p,userValue);
+    p->userValue = userValue;
+    if(userNode==NULL || pos==1){
+        p->next = userNode;
+        userNode->next = p;
+
+    } else {
+        UserNode* q = userNode;
+        int i = 2;
+        while(q->next!=NULL && (i<pos)){q= q->next;
+            i++;
+        }
+        p->next = q->next;
+        q->next = p;
+    }
+}
+
 void deleteUserList(UserNode** userNode){
     if(*userNode != NULL){
         UserNode* p = *userNode;

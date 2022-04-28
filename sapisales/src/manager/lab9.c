@@ -22,6 +22,14 @@ void testUserListFunctionalities(){
     createUser(&user2);
     setUserData(user2,"ANNE SMITH", TEACHER, FEMALE, MATHEMATICS_INFORMATICS, date2);
 
+    Date* date3;
+    createDate(&date3);
+    setDate(date2,1920,3,12);
+
+    User* user3;
+    createUser(&user3);
+    setUserData(user3,"Miky LICKy", TEACHER, MALE, MATHEMATICS_INFORMATICS, date1);
+
     // Declaring the User List
     UserNode* userNode;
     createUserNode(&userNode,user);
@@ -29,6 +37,7 @@ void testUserListFunctionalities(){
     insertFirst(&userNode,user2);
 
 
+    insertInNthPlace(userNode,user3,0);
     printUserList(userNode,"CON");
 
     removeFirst(&userNode);
@@ -39,6 +48,8 @@ void testUserListFunctionalities(){
     } else {
     printUser(findElementInList(userNode,1030),"CON");
         }
+
+
 
     deleteUserList(&userNode);
 

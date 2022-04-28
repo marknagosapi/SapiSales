@@ -96,7 +96,8 @@ int removeLast(UserNode* userNode){
 void insertInNthPlace(UserNode* userNode, User* userValue, int pos){
     UserNode * p;
     createUserNode(&p,userValue);
-    p->userValue = userValue;
+    setUserData(p->userValue,userValue->name,userValue->type,userValue->gender,userValue->specialization,&userValue->date);
+    //p->userValue = userValue;
     if(userNode==NULL || pos==1){
         p->next = userNode;
         userNode->next = p;

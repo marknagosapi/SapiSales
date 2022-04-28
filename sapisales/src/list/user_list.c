@@ -113,6 +113,7 @@ void insertInNthPlace(UserNode* userNode, User* userValue, int pos){
     }
 }
 
+
 void deleteUserList(UserNode** userNode){
     if(*userNode != NULL){
         UserNode* p = *userNode;

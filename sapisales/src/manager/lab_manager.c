@@ -45,3 +45,8 @@ void lab9(){
     printDescriptionMessage(LAB9);
     testUserListFunctionalities();
 }
+
+void lab10(){
+    printDescriptionMessage(LAB10);
+    testUserBSTFunctionalities();
+}

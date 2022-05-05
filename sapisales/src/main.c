@@ -7,7 +7,7 @@
 
 int main() {
 
-    lab9();
+    lab10();
 
     return 0;
 }

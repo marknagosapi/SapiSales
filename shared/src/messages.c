@@ -50,6 +50,11 @@ void printDescriptionMessage(enum LabType exercise){
             printf("TESTING USER_LIST FUNCTIONALITIES");
             printf("\n\n***********************************************************\n\n");
             break;
+        case LAB10:
+            printf("\n\n***********************************************************\n\n");
+            printf("TESTING USER_BST FUNCTIONALITIES");
+            printf("\n\n***********************************************************\n\n");
+            break;
         default:
             printf("Undefined description\n");
     }

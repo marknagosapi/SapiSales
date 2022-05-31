@@ -12,6 +12,7 @@
 #include "lab8.h"
 #include "lab9.h"
 #include "lab10.h"
+#include "lab11.h"
 
 void lab2();
 void lab3();
@@ -20,5 +21,6 @@ void lab5();
 void lab8();
 void lab9();
 void lab10();
+void lab11();
 
 #endif //SAPISALES_LAB_MANAGER_H

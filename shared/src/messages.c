@@ -47,12 +47,17 @@ void printDescriptionMessage(enum LabType exercise){
             break;
         case LAB9:
             printf("\n\n***********************************************************\n\n");
-            printf("TESTING USER_LIST FUNCTIONALITIES");
+            printf("\t\t\tTESTING USER_LIST FUNCTIONALITIES");
             printf("\n\n***********************************************************\n\n");
             break;
         case LAB10:
             printf("\n\n***********************************************************\n\n");
-            printf("TESTING USER_BST FUNCTIONALITIES");
+            printf("\t\t\tTESTING USER_BST FUNCTIONALITIES");
+            printf("\n\n***********************************************************\n\n");
+            break;
+        case LAB11:
+            printf("\n\n***********************************************************\n\n");
+            printf("\t\t\tTESTING USER HASH FUNCTIONALITIES");
             printf("\n\n***********************************************************\n\n");
             break;
         default:
@@ -75,8 +80,10 @@ void freeMemory(enum MFT type) {
         printf("[USER_QUEUE SUCCESSFULLY DELETED]\n");
     } else if(type== PRODUCT) {
         printf("[PRODUCT SUCCESSFULLY DELETED]\n");
-    } else{
+    } else if(type== LIST){
         printf("[LIST SUCCESSFULLY DELETED]\n");
+    }  else {
+        printf("[HASH SUCCESSFULLY DELETED]\n");
     }
     reset2();
 }

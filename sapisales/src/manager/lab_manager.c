@@ -50,3 +50,8 @@ void lab10(){
     printDescriptionMessage(LAB10);
     testUserBSTFunctionalities();
 }
+
+void lab11(){
+    printDescriptionMessage(LAB11);
+    testHashFunctionalities();
+}

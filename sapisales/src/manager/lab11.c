@@ -1,11 +1,11 @@
 //
-// Created by Mark Nago on 05.05.2022.
+// Created by Mark Nago on 31.05.2022.
 //
 
-#include "user_bst.h"
+#include <user.h>
+#include "product_hash.h"
 
-void testUserBSTFunctionalities(){
-
+void testHashFunctionalities(){
     //Declaring the Users
     Date* date1;
     createDate(&date1);
@@ -31,21 +31,17 @@ void testUserBSTFunctionalities(){
     createUser(&user3);
     setUserData(user3,"Miky LICKy", TEACHER, MALE, MATHEMATICS_INFORMATICS, date1);
 
-    //Creating the Data Structure (BST)
+    Hash * hashTable;
+    createHash(&hashTable,3);
 
-    UserTreeNode* node = NULL;
-    create(&node);
-    insert(&node,user);
-    insert(&node,user2);
-    insert(&node,user3);
+    insertHash(hashTable,user);
+    insertHash(hashTable,user2);
+    insertHash(hashTable,user3);
 
-    printf("PREORDER\n");
-    preoderPrint(node,"out");
-    printf("POSTORDER\n");
-    postorderPrint(node,"out");
-    printf("INORDER\n");
-    inorderPrint(node,"out");
-    delete(node,user3);
-    inorderPrint(node,"out");
-
+    printf("\t\t||HASH TABLE||\n");
+    printHashTable(hashTable);
+    deleteFromHashTable(hashTable,1010);
+    printf("After deleting the user with id of 1010 - >\n");
+    printHashTable(hashTable);
+    freeHashTable(&hashTable);
 }

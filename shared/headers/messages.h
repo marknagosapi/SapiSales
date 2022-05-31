@@ -12,13 +12,15 @@ enum LabType{
     LAB5,
     LAB8,
     LAB9,
-    LAB10
+    LAB10,
+    LAB11
 };
 enum MFT{
     PRODUCT,
     USER,
     USER_QUEUE,
-    LIST
+    LIST,
+    HASH
 };
 
 enum K{
